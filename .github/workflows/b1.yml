@@ -1,0 +1,25 @@
+
+name: Secure DevSecOps Pipeline
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches:
+     - master
+    
+  
+jobs:
+  build_and_package:
+    name: BUILD-JOB
+    runs-on: ubuntu-slim
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: BUILD
+        run: npm ci
+
+      - name: TEST
+        uses: echo "code is tested"
