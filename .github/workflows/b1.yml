@@ -23,3 +23,10 @@ jobs:
 
       - name: TEST
         run: echo "code is tested"
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: production-build
+          path: dist/
+          retention-days: 7
